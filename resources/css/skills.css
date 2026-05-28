@@ -1,0 +1,22 @@
+/* Infinite Scroll Animation */
+
+@keyframes scroll {
+
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(calc(-220px * 5));
+    }
+
+}
+
+.animate-scroll{
+    animation: scroll 20s linear infinite;
+    width: max-content;
+}
+
+.animate-scroll:hover{
+    animation-play-state: paused;
+}

@@ -3,13 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Project;
 
 class ProjectsController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
-        return view("welcome",compact('projects'));
+        $projects = [
+
+            [
+                'title' => 'Smart Recruit',
+                'image' => 'projects/smartrecruit.png',
+                'technologies' => ['Laravel', 'Tailwind'],
+                'description' => 'Recruitment management system',
+                'live' => 'https://smartrecruitglobal.com/',
+            ],
+
+            [
+                'title' => 'Construction  website',
+                'image' => 'projects/construction.png',
+                'tech' => ['Html', 'CSS' , 'Bootstrap'],
+                'description' => 'Responsive construction company website'
+            ]
+
+        ];
+
+        return view('welcome', compact('projects'));
     }
 }

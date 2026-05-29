@@ -11,6 +11,3 @@ use App\Http\Controllers\ContactController;
 // });
 
 Route::get('/', [ProjectsController::class, 'index']);
-
-Route::post('/contact', [ContactController::class, 'store'])
-    ->name('contact.submit');

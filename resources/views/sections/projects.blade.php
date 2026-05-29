@@ -25,7 +25,9 @@
 
         </div>
 
-        <!-- Project Grid -->
+
+<!-- Project Grid -->
+        
         <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
             @foreach ($projects as $project)
@@ -47,8 +49,8 @@
                 <!-- Image -->
                 <div class="overflow-hidden">
 
-                    <img src="{{ asset( $project->image) }}"
-                        alt="{{ $project->title }}"
+                    <img src="{{ asset($project['image']) }}"
+                        alt="{{ $project['title'] }}"
                         class="w-full h-[260px] object-cover
                         group-hover:scale-110 transition duration-700">
 
@@ -60,7 +62,7 @@
                     <!-- Technologies -->
                     <div class="flex gap-2 flex-wrap mb-4">
 
-                        @foreach ($project->technologies as $tech)
+                        @foreach (($project['technologies'] ?? []) as $tech)
 
                         <span
                             class="px-3 py-1 text-xs rounded-full
@@ -77,13 +79,13 @@
 
                     <!-- Title -->
                     <h3 class="text-2xl font-bold mb-4">
-                        {{ $project->title }}
+                        {{ $project['title'] }}
                     </h3>
 
                     <!-- Description -->
                     <p class="text-gray-400 leading-7 mb-6 text-sm">
 
-                        {{ $project->description }}
+                        {{ $project['description'] }}
 
                     </p>
 
@@ -91,7 +93,7 @@
                     <div class="flex gap-4">
 
                         <!-- Live Demo -->
-                        <a href="{{ $project->live ?? '#' }}"
+                        <a href="{{ $project['live'] ?? '#' }}"
                             target="_blank"
                             class="flex-1 text-center
                             px-5 py-3 rounded-xl
@@ -104,7 +106,7 @@
                         </a>
 
                         <!-- GitHub -->
-                        <a href="{{ $project->github_link ?? '#' }}"
+                        <a href="{{ $project['github_link'] ?? '#' }}"
                             target="_blank"
                             class="flex-1 text-center
                             px-5 py-3 rounded-xl

@@ -101,39 +101,53 @@
             <!-- Right Form -->
             <div class="bg-white/5 border border-white/10 rounded-[35px] p-8 md:p-10 backdrop-blur-2xl hover:border-cyan-400 transition duration-500">
                 
-                @if(session('success'))
-                    <div class="mb-6 bg-green-500/20 border border-green-400 text-green-300 px-4 py-3 rounded-xl">
-                        {{ session('success') }}
-                    </div>
-
-                @endif
                 
-                
-                <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
+               <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
 
-                    @csrf
+                 <!-- Web3Forms Key -->
+                <input type="hidden" 
+                    name="access_key" 
+                    value="894ce71b-08bc-4851-9236-65ed1cb1b84e">
                     
-                    <!-- Name -->
-                    <div>
+                <input type="checkbox" 
+                    name="botcheck" 
+                    class="hidden" 
+                    style="display: none;">
 
-                        <label class="text-gray-400 mb-3 block">
-                            Full Name
-                        </label>
+                <!-- Optional -->
+                <input type="hidden" 
+                    name="subject" 
+                    value="New Portfolio Contact Message">
 
-                        <input type="text" name="name"
-                            placeholder="Enter your name"
-                            class="w-full bg-[#0f172a] border border-white/10 rounded-2xl px-5 py-4 focus:border-cyan-400 focus:outline-none transition duration-300">
+                <input type="hidden" 
+                    name="redirect" 
+                    value="https://your-vercel-domain.vercel.app/">
 
-                    </div>
+                <!-- Name -->
+                <div>
 
-                    <!-- Email -->
-                    <div>
+                    <label class="text-gray-400 mb-3 block">
+                        Full Name
+                    </label>
+
+                    <input type="text" 
+                        name="name"
+                        required
+                        placeholder="Enter your name"
+                        class="w-full bg-[#0f172a] border border-white/10 rounded-2xl px-5 py-4 focus:border-cyan-400 focus:outline-none transition duration-300">
+
+                 </div>
+
+                <!-- Email -->
+                <div>
 
                         <label class="text-gray-400 mb-3 block">
                             Email Address
                         </label>
 
-                        <input type="email" name="email"
+                        <input type="email" 
+                            name="email"
+                            required
                             placeholder="Enter your email"
                             class="w-full bg-[#0f172a] border border-white/10 rounded-2xl px-5 py-4 focus:border-cyan-400 focus:outline-none transition duration-300">
 
@@ -146,9 +160,11 @@
                             Message
                         </label>
 
-                        <textarea rows="6" name="message"
-                            placeholder="Write your message..."
-                            class="w-full bg-[#0f172a] border border-white/10 rounded-2xl px-5 py-4 focus:border-cyan-400 focus:outline-none transition duration-300 resize-none"></textarea>
+                        <textarea rows="6" 
+                                name="message"
+                                required
+                                placeholder="Write your message..."
+                                class="w-full bg-[#0f172a] border border-white/10 rounded-2xl px-5 py-4 focus:border-cyan-400 focus:outline-none transition duration-300 resize-none"></textarea>
 
                     </div>
 
@@ -160,7 +176,7 @@
 
                     </button>
 
-                </form>
+            </form>
 
             </div>
 

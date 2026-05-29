@@ -12,15 +12,7 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN npm install
-
-RUN npm run build
-
-RUN mkdir -p storage/framework/cache
-RUN mkdir -p storage/framework/sessions
-RUN mkdir -p storage/framework/views
-RUN mkdir -p storage/logs
-RUN mkdir -p bootstrap/cache
+RUN npm install && npm run build
 
 RUN chmod -R 777 storage
 RUN chmod -R 777 bootstrap/cache

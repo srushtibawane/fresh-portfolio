@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body class="bg-black text-white">
      <nav class="bg-black shadow-2xl rounded-xl px-12 py-6 w-[85%] mx-auto">

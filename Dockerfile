@@ -1,25 +1,48 @@
-FROM webdevops/php-nginx:8.2
+FROM php:8.2-cli
+
+# Install system dependencies
+
+RUN apt-get update && apt-get install -y 
+git 
+unzip 
+curl 
+libzip-dev 
+zip 
+nodejs 
+npm
+
+# Install PHP extensions
+
+RUN docker-php-ext-install pdo pdo_mysql zip
+
+# Install Composer
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
 
-ENV WEB_DOCUMENT_ROOT=/app/public
-
-ENV TMPDIR=/app/storage/tmp
-ENV TEMP=/app/storage/tmp
-ENV TMP=/app/storage/tmp
+# Install dependencies
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN mkdir -p /app/storage/framework/cache
-RUN mkdir -p /app/storage/framework/sessions
-RUN mkdir -p /app/storage/framework/views
-RUN mkdir -p /app/storage/logs
-RUN mkdir -p /app/storage/tmp
-RUN mkdir -p /app/bootstrap/cache
+# Build Vite assets
 
-RUN chmod -R 777 /app/storage
-RUN chmod -R 777 /app/bootstrap/cache
+RUN npm install
+RUN npm run build
 
-EXPOSE 8080
+# Laravel writable folders
+
+RUN mkdir -p storage/framework/cache
+RUN mkdir -p storage/framework/sessions
+RUN mkdir -p storage/framework/views
+RUN mkdir -p storage/logs
+RUN mkdir -p bootstrap/cache
+
+RUN chmod -R 777 storage
+RUN chmod -R 777 bootstrap/cache
+
+EXPOSE 10000
+
+CMD php artisan serve --host=0.0.0.0 --port=10000

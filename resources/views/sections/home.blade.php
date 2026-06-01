@@ -1,6 +1,6 @@
 <!-- Hero / Landing Section -->
 <section id="home"
-class="min-h-screen bg-slate-900 flex items-center px-5 sm:px-8 md:px-16 lg:px-20 pt-16 md:pt-20 overflow-hidden">
+class="min-h-screen bg-slate-900 flex items-center px-5 py-24 sm:px-8 md:px-16 lg:px-20 pt-16 pb-16 md:pt-20 overflow-hidden">
 
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
@@ -114,7 +114,7 @@ class="min-h-screen bg-slate-900 flex items-center px-5 sm:px-8 md:px-16 lg:px-2
         <div class="relative flex justify-center items-center order-1 md:order-2">
 
             <img
-                src="{{ asset('images/srushti.png') }}"
+                src="{{ asset('images/srushti1.png') }}"
                 alt="Profile"
 
                 class="relative z-10

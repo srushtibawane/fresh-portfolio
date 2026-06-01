@@ -48,7 +48,7 @@
             <!-- Right -->
             <div class="flex gap-5">
 
-                <a href="#"
+                <a href="https://github.com/srushtibawane"
                     class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-110 transition duration-300">
 
                     <i class="devicon-github-original"></i>

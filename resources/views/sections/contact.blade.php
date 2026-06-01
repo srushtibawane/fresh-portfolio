@@ -49,9 +49,9 @@
                                 Email
                             </p>
 
-                            <h4 class="text-lg font-semibold">
+                            <a href="mailto:srushtibawane349@gmail.com" class="text-lg font-semibold">
                                 srushtibawane349@gmail.com
-                            </h4>
+                            </a>
                         </div>
 
                     </div>
@@ -68,9 +68,9 @@
                                 Phone
                             </p>
 
-                            <h4 class="text-lg font-semibold">
+                            <a href="tel:+918698224026" class="text-lg font-semibold">
                                 +91 8698224026
-                            </h4>
+                            </a>
                         </div>
 
                     </div>
@@ -176,7 +176,7 @@
 
                     </button>
 
-            </form>
+                </form>
 
             </div>
 

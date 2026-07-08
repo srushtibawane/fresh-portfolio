@@ -106,7 +106,7 @@
                         </a>
 
                         <!-- GitHub -->
-                        <a href="{{ $project['github_link'] ?? '#' }}"
+                        <a href="{{ $project['github'] ?? '#' }}"
                             target="_blank"
                             class="flex-1 text-center
                             px-5 py-3 rounded-xl

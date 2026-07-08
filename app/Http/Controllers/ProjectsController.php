@@ -21,9 +21,19 @@ class ProjectsController extends Controller
             [
                 'title' => 'Construction  website',
                 'image' => 'projects/construction.png',
-                'tech' => ['Html', 'CSS' , 'Bootstrap'],
+                'technologies' => ['Html', 'CSS' , 'Bootstrap'],
                 'description' => 'Responsive construction company website'
+            ],
+
+            [
+                'title' => 'Employee Management System',
+                'image' => 'projects/ems.png',
+                'technologies' => ['Html', 'CSS' , 'Tailwind CSS','Javascript', 'Laravel', 'MySQL'],
+                'description' => 'Developing an employee management system with authentication, CRUD operations, and responsive design.',
+                'github' => 'https://github.com/srushtibawane/employee-management-system.git'
             ]
+
+
 
         ];
 

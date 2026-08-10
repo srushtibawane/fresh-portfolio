@@ -93,7 +93,7 @@
                     <div class="flex gap-4">
 
                         <!-- Live Demo -->
-                        <a href="{{ $project['live'] ?? '#' }}"
+                        {{-- <a href="{{ $project['live'] ?? '#' }}"
                             target="_blank"
                             class="flex-1 text-center
                             px-5 py-3 rounded-xl
@@ -103,7 +103,7 @@
 
                             Live Demo
 
-                        </a>
+                        </a> --}}
 
                         <!-- GitHub -->
                         <a href="{{ $project['github'] ?? '#' }}"
